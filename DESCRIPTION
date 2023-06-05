@@ -1,11 +1,18 @@
-Package: minicexpack
 Type: Package
+Package: minicexpack
 Title: Analyses MiniCEx Data
 Version: 0.1.0
-Authors@R: person("Jilly", "MacKay", email = "jill.mackay@ed.ac.uk", 
-  role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: 
+    person("Jilly", "MacKay", , "jill.mackay@ed.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7134-4829"))
+Description: More about what it does (maybe more than one line) Use four
+    spaces when indenting paragraphs within the Description.
 License: What license is it under?
+Depends: 
+    dplyr,
+    janitor,
+    lubridate,
+    readxl
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.2.3
