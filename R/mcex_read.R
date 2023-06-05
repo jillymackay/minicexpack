@@ -39,32 +39,33 @@ mcex_read <- function(file_path) {
            "StudentReflection" = "student_self_reflection_on_feedback_received_and_next_steps",
            "StudentDeclaration" = "student_declaration_i_confirm_that_i_have_checked_the_contents_of_this_form_with_my_assessor_prior_to_submission_and_they_have_approved_it") %>%
     mutate(GivenMatric = tolower(GivenMatric),
-           matric = str_extract(GivenMatric, "\\D\\d\\d\\d\\d\\d\\d\\d"),
-           matric = case_when (is.na(matric) ~ str_extract(Email, "\\D\\d\\d\\d\\d\\d\\d\\d"),
+           matric = stringr::str_extract(GivenMatric, "\\D\\d\\d\\d\\d\\d\\d\\d"),
+           matric = case_when (is.na(matric) ~ stringr::str_extract(Email, "\\D\\d\\d\\d\\d\\d\\d\\d"),
                                TRUE ~ as.character(matric)),
-           DateOfTask = lubridate::ymd(str_extract(DateEvent, "\\d\\d\\d\\d\\-\\d\\d\\-\\d\\d")),
+           DateOfTask = lubridate::ymd(stringr::str_extract(DateEvent, "\\d\\d\\d\\d\\-\\d\\d\\-\\d\\d")),
            taskCounter = 1,
-           Spp = as.factor(Species),
-           Rotation = as_factor(Rotation),
-           MainTask = as_factor(MainTask),
+           Spp = forcats::as_factor(Species),
+           Rotation = forcats::as_factor(Rotation),
+           MainTask = forcats::as_factor(MainTask),
            TaskSummary = tolower(TaskSummary),
-           SurgTx = str_detect(MainTask, "Surgical Treatment"),
-           ClinicalExam = str_detect(MainTask, "Clinical Examination"),
-           Diagnostics = str_detect(MainTask, "Diagnostic Procedures"),
-           CommsSkills = str_detect(MainTask, "Communication Skills"),
-           MedTx = str_detect(MainTask, "Medical Treatment"),
-           Other = str_detect(MainTask, "Other"),
+           SurgTx = stringr::str_detect(MainTask, "Surgical Treatment"),
+           ClinicalExam = stringr::str_detect(MainTask, "Clinical Examination"),
+           Diagnostics = stringr::str_detect(MainTask, "Diagnostic Procedures"),
+           CommsSkills = stringr::str_detect(MainTask, "Communication Skills"),
+           MedTx = stringr::str_detect(MainTask, "Medical Treatment"),
+           Other = stringr::str_detect(MainTask, "Other"),
            OverallAssessorFeedback = factor(OverallAssessorFeedback, levels = c("Above expected level",
                                                                                 "At expected level",
                                                                                 "Below expected level"))) %>%
 
     mutate_at(.vars = vars(c("Organisation":"ClinicalReasoning")),
               .funs = function(x) case_when(x == "N/A" ~ NA,
-                                            TRUE ~ as.character(x)))
-  mutate_at(.vars = vars(c("Organisation":"ClinicalReasoning")),
+                                            TRUE ~ as.character(x))) %>%
+    mutate_at(.vars = vars(c("Organisation":"ClinicalReasoning")),
             .funs = function(x) factor(x, levels = c("The student didn’t require any assistance from me",
                                                      "The student didn’t require much assistance from me",
                                                      "I had to provide help at several points",
                                                      "I had to do most/all of the task")))
 
 }
+
