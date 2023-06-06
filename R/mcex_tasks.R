@@ -12,15 +12,13 @@
 
 mcex_tasks <- function(minicex_data) {
 
-  dataframe %>%
+  minicex_data %>%
+    group_by(matric) %>%
     summarise(ClinicalExam = sum(ClinicalExam),
               Diagnostics = sum(Diagnostics),
               MedTx = sum(MedTx),
               SurgTx = sum(SurgTx),
               CommsSkills = sum(CommsSkills),
-              Other = sum(Other),
-              Dentistry_extra = sum(Dentistry_extra),
-              PPE_extra = sum(PPE_extra),
-              totalTasks = sum(taskCounter)) %>%
-    mutate(totalThemes = ClinicalExam + Diagnostics + MedOrSurgTx + MedTx +SurgTx + CommsSkills + Isolation + Other)
-}
+              Dentistry = sum(Dentistry),
+              totalTasks = sum(taskCounter))
+ }

@@ -12,9 +12,7 @@
 
 mcex_longtasks <- function (tasks) {
   tasks %>%
-    pivot_longer(cols = -c(matric, totalTasks), names_to = "Task", values_to = "count") %>%
-    mutate(taskCounter2 = case_when(count >  0 ~ 1,
-                                    count < 1 ~ 0,
-                                    TRUE ~ 400))
+    pivot_longer(cols = -c(matric, totalTasks), names_to = "Task", values_to = "count")
+
 
 }

@@ -10,12 +10,14 @@
 
 
 mcex_enoughtasks <- function(minicex_data, week_requirement = 24){
+
+  minicex_data <- minicex_data
+
   namesMatric <- minicex_data %>%
     select(matric, StudentName)
 
-  stuTasks <- mcex_tasks(minicex_data)
 
-  notEnoughTasks <- stuTasks %>%
+  notEnoughTasks <- mcex_tasks(minicex_data) %>%
     filter(totalTasks < week_requirement) %>%
     select(matric, totalTasks) %>%
     arrange("totalTasks") %>%
