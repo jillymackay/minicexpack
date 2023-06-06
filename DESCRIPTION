@@ -11,6 +11,7 @@ License: What license is it under?
 Depends: 
     dplyr,
     forcats,
+    ggplot2,
     janitor,
     lubridate,
     readxl,
