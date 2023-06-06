@@ -1,8 +1,8 @@
 #' Creates a dataframe of the number of tasks per student
-#' @param dataframe A dataframe of tidy MiniCEx data (you will likely have used mcex_read to generate this)
+#' @param minicex_data A dataframe of tidy MiniCEx data (you will likely have used mcex_read to generate this)
 #' @returns A dataframe of number of tasks per student
 #' @examples
-#' tasks <- mcex_tasks(minicex)
+#' tasks <- mcex_tasks(minicex_data)
 #'
 #'
 #'
@@ -10,7 +10,7 @@
 
 
 
-mcex_tasks <- function(dataframe) {
+mcex_tasks <- function(minicex_data) {
 
   dataframe %>%
     summarise(ClinicalExam = sum(ClinicalExam),
