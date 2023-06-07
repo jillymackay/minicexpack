@@ -6,8 +6,8 @@
 \usage{
 mcexplot_tasks(
   minicex_data,
-  x_var = c(matric, week),
-  fill_var = c(Spp, OverallAssessorFeedback)
+  x_var = matric,
+  fill_var = OverallAssessorFeedback
 )
 }
 \arguments{
@@ -15,7 +15,7 @@ mcexplot_tasks(
 
 \item{x_var}{The variable for the x axis, can be either matric or week. Default is matric}
 
-\item{fill_var}{A factor from the dataset to fill the data.Can be Spp or OverallAssessorFeedback}
+\item{fill_var}{A factor from the dataset to fill the data. Usually Spp or OverallAssessorFeedback. Default is OverallAssessorFeedback}
 }
 \value{
 A plot describing number of tasks by student

@@ -19,6 +19,4 @@ Creates a dataframe of the number of tasks per student
 tasks <- mcex_tasks(minicex_data)
 
 
-
-
 }

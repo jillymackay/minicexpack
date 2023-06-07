@@ -4,10 +4,10 @@
 \alias{mcex_longtasks}
 \title{Creates a long dataframe of the number of tasks per student}
 \usage{
-mcex_longtasks(tasks)
+mcex_longtasks(minicex_data)
 }
 \arguments{
-\item{tasks}{A dataframe of tasks per student (you will likely have used mcex_tasks to generate this)}
+\item{minicex_data}{A dataframe of cleaned MiniCEx data (you will likely have used mcex_read() to generate this)}
 }
 \value{
 A dataframe of number of tasks per student
@@ -16,7 +16,7 @@ A dataframe of number of tasks per student
 Creates a long dataframe of the number of tasks per student
 }
 \examples{
-dat <- mcex_longtasks(tasks)
+stuTasksLong <- mcex_longtasks(minicex_data)
 
 
 

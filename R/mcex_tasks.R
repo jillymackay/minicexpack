@@ -5,8 +5,7 @@
 #' tasks <- mcex_tasks(minicex_data)
 #'
 #'
-#'
-#'
+
 
 
 
