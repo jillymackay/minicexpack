@@ -21,3 +21,5 @@ mcexplot_datetasks(dat)
 mcexplot_tasks(dat)
 
 mcexplot_tasks(dat, DateOfTask, Spp)
+
+mcexplot_facettasks(dat)

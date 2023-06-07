@@ -18,11 +18,11 @@ mcexplot_tasks(
 \item{fill_var}{A factor from the dataset to fill the data. Usually Spp or OverallAssessorFeedback. Default is OverallAssessorFeedback}
 }
 \value{
-A plot describing number of tasks by student
+A plot describing number of tasks by chosen vars
 }
 \description{
 Generates a generic plot utilised in analysis where the number of tasks can be viewed via specified vars
 }
 \examples{
-mcexplot_tasks(longdate_tasks)
+mcexplot_tasks(minicex_data, x_var = matric, fill_var = OverallAssessorFeedback)
 }
