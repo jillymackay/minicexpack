@@ -2,7 +2,7 @@
 % Please edit documentation in R/mcexplot_tasks.R
 \name{mcexplot_tasks}
 \alias{mcexplot_tasks}
-\title{Generates a plot of the number of tasks per student/week}
+\title{Generates a generic plot utilised in analysis where the number of tasks can be viewed via specified vars}
 \usage{
 mcexplot_tasks(
   minicex_data,
@@ -21,7 +21,7 @@ mcexplot_tasks(
 A plot describing number of tasks by student
 }
 \description{
-Generates a plot of the number of tasks per student/week
+Generates a generic plot utilised in analysis where the number of tasks can be viewed via specified vars
 }
 \examples{
 mcexplot_tasks(longdate_tasks)
