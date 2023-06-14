@@ -11,11 +11,16 @@ mcex_weekn <- function(FYStartDate = "20230605"){
 
   FYStartDate <- as.numeric(FYStartDate)
 
-  if(as.numeric((Sys.Date() - ymd(FYStartDate) - 28 - 28 - 28) / 7)<=24) {
-    as.numeric((Sys.Date() - ymd(FYStartDate) - 28 - 28 - 28) / 7)
-  } else {
-    24
-  }
+
+  if ((as.numeric((Sys.Date() - ymd(FYStartDate))) / 7) <= 12 )
+    {as.numeric((as.numeric((Sys.Date() - ymd(FYStartDate))) / 7))}
+  else
+  {if (as.numeric((Sys.Date() - ymd(FYStartDate) - 28 - 28 - 28) / 7)<=24)
+  {as.numeric((Sys.Date() - ymd(FYStartDate) - 28 - 28 - 28) / 7)}
+    else {24}}
+
+
+
 
 }
 
