@@ -3,7 +3,7 @@
 #' @param FYStartDate A string of YYYYMMDD which represents the Monday FY started
 #' @param SummerHolidayStartDate A string of YYYYMMDD which represents the Monday the summer holiday starts
 #' @param XmasHolidayStartDate A string of YYYYMMDD which represents the Monday the Christmas holiday starts
-#' @returns The number of MiniCExs that should have been completed by the current week
+#' @returns The number of MiniCExs that should have been completed by the current week. Pauses count over Summer and Christmas breaks, and caps at 24
 #' @examples
 #' mcex_weekn()
 #'

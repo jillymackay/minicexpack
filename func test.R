@@ -11,7 +11,7 @@
 WeekNumberRequirement <- mcex_weekn()
 
 # Should return 5
-WeekNumberRequirementJuly <- mcex_weekn(CalculationDate = "20230807")
+WeekNumberRequirementJuly <- mcex_weekn(CalculationDate = "20230707")
 
 
 # should return 24
