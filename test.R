@@ -6,6 +6,9 @@ dat <- mcex_read(fil)
 
 WeekNumberRequirement <- mcex_weekn()
 
+# Should return 4
+WeekNumberRequirementJuly <- mcex_weekn(CalculationDate = "20230708")
+
 stuTasks <- mcex_tasks(dat)
 
 stuTasksLong <- mcex_longtasks(dat)
