@@ -1,7 +1,14 @@
 
 fil <- file.path("C:\\Users\\jmackay4\\Documents\\data\\Mini CEx Local Mirror\\FY MiniCE 2023_2024.xlsx")
-
+tt <- "//cmvm.datastore.ed.ac.uk/cmvm/eb/users/jmackay4/Operational/AY 2023-2024/MiniCEx/FY23-24 core rotation timetable for Alex.xlsx"
 dat <- mcex_read(fil)
+
+
+ttable <- mcex_ttable(tt, sheet = "2022-2023")
+
+inglis <- mcex_inglis(tt, sheet = "2022-2023")
+
+inglis2 <- mcex_inglis(tt, sheet = "2022-2023", what_week = "2023-07-01")
 
 
 check <- mcex_matriccheck(dat)
