@@ -1,5 +1,8 @@
 #' Generates the week requirement for MiniCEx analysis
+#' @param CalculationDate A string of YYYYMMDD which represents the current date. Default is Sys.Date()
 #' @param FYStartDate A string of YYYYMMDD which represents the Monday FY started
+#' @param SummerHolidayStartDate A string of YYYYMMDD which represents the Monday the summer holiday starts
+#' @param XmasHolidayStartDate A string of YYYYMMDD which represents the Monday the Christmas holiday starts
 #' @returns The number of MiniCExs that should have been completed by the current week
 #' @examples
 #' mcex_weekn()
@@ -7,20 +10,28 @@
 #'
 
 
-mcex_weekn <- function(FYStartDate = "20230605"){
+mcex_weekn <- function(CalculationDate = 0, FYStartDate = "20230605", SummerHolidayStartDate = "20230703", XmasHolidayStartDate = "20231218"){
 
   FYStartDate <- as.numeric(FYStartDate)
 
+  SummerHolidayStartDate <- as.numeric(SummerHolidayStartDate)
 
-  if ((as.numeric((Sys.Date() - ymd(FYStartDate))) / 7) <= 12 )
-    {as.numeric((as.numeric((Sys.Date() - ymd(FYStartDate))) / 7))}
-  else
-  {if (as.numeric((Sys.Date() - ymd(FYStartDate) - 28 - 28 - 28) / 7)<=24)
-  {as.numeric((Sys.Date() - ymd(FYStartDate) - 28 - 28 - 28) / 7)}
-    else {24}}
+  XmasHolidayStartDate <- as.numeric(XmasHolidayStartDate)
 
+  CalculationDate <- if(is.character(CalculationDate)){as.numeric(CalculationDate)}
+  else{Sys.Date()}
 
 
+  if(CalculationDate < ymd(SummerHolidayStartDate))
+    {(as.numeric((CalculationDate - ymd(FYStartDate))) / 7)}
+  else {if(CalculationDate < ymd(XmasHolidayStartDate))
+    {(as.numeric((CalculationDate - ymd(FYStartDate)) - 28) / 7)}
+    else{if(CalculationDate >= ymd(XmasHolidayStartDate)){24}}}
 
-}
+
+    }
+
+
+
+
 
