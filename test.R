@@ -4,10 +4,17 @@ fil <- file.path("C:\\Users\\jmackay4\\Documents\\data\\Mini CEx Local Mirror\\F
 dat <- mcex_read(fil)
 
 
+check <- mcex_matriccheck(dat)
+
 WeekNumberRequirement <- mcex_weekn()
 
-# Should return 4
-WeekNumberRequirementJuly <- mcex_weekn(CalculationDate = "20230708")
+# Should return 5
+WeekNumberRequirementJuly <- mcex_weekn(CalculationDate = "20230707")
+
+
+# should return 24
+WeekNumberRequirementDec <- mcex_weekn(CalculationDate = "20240104")
+
 
 stuTasks <- mcex_tasks(dat)
 
