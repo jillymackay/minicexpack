@@ -22,11 +22,11 @@ mcex_weekn <- function(CalculationDate = 0, FYStartDate = "20230605", SummerHoli
   else{Sys.Date()}
 
 
-  if(CalculationDate < ymd(SummerHolidayStartDate))
-    {(as.numeric((CalculationDate - ymd(FYStartDate))) / 7)}
-  else {if(CalculationDate < ymd(XmasHolidayStartDate))
-    {(as.numeric((CalculationDate - ymd(FYStartDate)) - 28) / 7)}
-    else{if(CalculationDate >= ymd(XmasHolidayStartDate)){24}}}
+  if(ymd(CalculationDate) < ymd(SummerHolidayStartDate))
+    {(as.numeric((ymd(CalculationDate) - ymd(FYStartDate))) / 7)}
+  else {if(ymd(CalculationDate) < ymd(XmasHolidayStartDate))
+    {(as.numeric(ymd(CalculationDate) - ymd(FYStartDate)) - 28)/7    }
+    else{if(ymd(CalculationDate) >= ymd(XmasHolidayStartDate)){24}}}
 
 
     }
