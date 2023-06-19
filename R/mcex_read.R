@@ -57,7 +57,9 @@ mcex_read <- function(file_path) {
            Other = str_detect(MainTask, "Other"),
            OverallAssessorFeedback = factor(OverallAssessorFeedback, levels = c("Above expected level",
                                                                                 "At expected level",
-                                                                                "Below expected level"))) %>%
+                                                                                "Below expected level")),
+           WeekN = ymd(DateOfTask),
+           WeekN = lubridate::week(WeekN)) %>%
 
     mutate_at(.vars = vars(c("Organisation":"ClinicalReasoning")),
               .funs = function(x) case_when(x == "N/A" ~ NA,
