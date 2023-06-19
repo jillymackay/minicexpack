@@ -1,6 +1,6 @@
 
 fil <- file.path("C:\\Users\\jmackay4\\Documents\\data\\Mini CEx Local Mirror\\FY MiniCE 2023_2024.xlsx")
-tt <- "//cmvm.datastore.ed.ac.uk/cmvm/eb/users/jmackay4/Operational/AY 2023-2024/MiniCEx/FY23-24 core rotation timetable for Alex.xlsx"
+tt <- "//cmvm.datastore.ed.ac.uk/cmvm/mvmsan/rdsvsshared/Fieldsec/BVMS Years/Final Year/Timetables & Student Groupings/2023-24/USE THIS ONE WORKING COPY FY23-24 core rotation timetable.xlsx"
 dat <- mcex_read(fil)
 
 
