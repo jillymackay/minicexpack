@@ -6,9 +6,9 @@ dat <- mcex_edit(errors, or_dat)
 
 ttable <- mcex_ttable(tt, sheet = "23-24")
 
-inglis <- mcex_inglis(tt, sheet = "2022-2023")
+inglis <- mcex_inglis(tt, sheet = "23-24")
 
-inglis2 <- mcex_inglis(tt, sheet = "2022-2023", what_week = "2023-07-01")
+inglis2 <- mcex_inglis(tt, sheet = "23-24", what_week = "2023-07-01")
 
 
 check <- mcex_matriccheck(dat)
