@@ -1,10 +1,10 @@
-
+errors <- "//cmvm.datastore.ed.ac.uk/cmvm/mvmsan/rdsvsshared/Fieldsec/BVMS Years/Final Year/MiniCEx Analyses/AY 2023-2024/FY MiniCE 2023_2024_RowsToEdt.xlsx"
 fil <- file.path("C:\\Users\\jmackay4\\Documents\\data\\Mini CEx Local Mirror\\FY MiniCE 2023_2024.xlsx")
 tt <- "//cmvm.datastore.ed.ac.uk/cmvm/mvmsan/rdsvsshared/Fieldsec/BVMS Years/Final Year/Timetables & Student Groupings/2023-24/USE THIS ONE WORKING COPY FY23-24 core rotation timetable.xlsx"
-dat <- mcex_read(fil)
+or_dat <- mcex_read(fil)
+dat <- mcex_edit(errors, or_dat)
 
-
-ttable <- mcex_ttable(tt, sheet = "2022-2023")
+ttable <- mcex_ttable(tt, sheet = "23-24")
 
 inglis <- mcex_inglis(tt, sheet = "2022-2023")
 

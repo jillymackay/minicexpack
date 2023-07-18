@@ -1,4 +1,4 @@
-#' Reads and cleans a minicex dataset
+#' Reads and cleans a minicex dataset. Helper function for mcex_edit()
 #' @param file_path A path pointing to your MiniCEx excel file
 #' @returns A dataframe containing cleaned MiniCEx data
 #' @examples

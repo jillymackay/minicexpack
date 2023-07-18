@@ -2,7 +2,7 @@
 % Please edit documentation in R/mcex_read.R
 \name{mcex_read}
 \alias{mcex_read}
-\title{Reads and cleans a minicex dataset}
+\title{Reads and cleans a minicex dataset. Helper function for mcex_edit()}
 \usage{
 mcex_read(file_path)
 }
@@ -13,7 +13,7 @@ mcex_read(file_path)
 A dataframe containing cleaned MiniCEx data
 }
 \description{
-Reads and cleans a minicex dataset
+Reads and cleans a minicex dataset. Helper function for mcex_edit()
 }
 \examples{
 dat <- mcex_read("data/minicex.xlsx")
