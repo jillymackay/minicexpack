@@ -13,14 +13,17 @@ inglis2 <- mcex_inglis(tt, sheet = "23-24", what_week = "2023-07-01")
 
 check <- mcex_matriccheck(dat)
 
-WeekNumberRequirement <- mcex_weekn()
+mcex_weekn()
 
 # Should return 5
-WeekNumberRequirementJuly <- mcex_weekn(CalculationDate = "20230707")
+mcex_weekn(CalculationDate = "20230807")
+
+# Should return 7
+mcex_weekn(CalculationDate = "20230821")
 
 
 # should return 24
-WeekNumberRequirementDec <- mcex_weekn(CalculationDate = "20240104")
+mcex_weekn(CalculationDate = "20240104")
 
 
 stuTasks <- mcex_tasks(dat)
