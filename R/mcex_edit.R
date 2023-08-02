@@ -12,9 +12,11 @@ mcex_edit <- function(edit_path, minicex_data) {
 
 
   erdat <- mcex_read(edit_path) %>%
+    filter(!is.na(rowID)) %>%
     select(rowID)
 
   repldat <- mcex_read(edit_path) %>%
+    filter(!is.na(rowID)) %>%
     filter(!remove %in% c("Y", "y")) %>%
     select(-remove)
 

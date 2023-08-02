@@ -13,9 +13,9 @@
 mcex_read <- function(file_path) {
   readxl::read_excel(file_path) %>%
     janitor::clean_names()  %>%
+    select(-c(start_time, completion_time)) %>%
+    mutate(date_of_feedback = as.Date(date_of_feedback, format = '%Y-%m-%d %H:%M:%S', origin = "1900-01-01 24:00:00")) %>%
     rename("rowID" = "id",
-           "StartTime" = "start_time",
-           "EndTime" = "completion_time",
            "Email" = "email",
            "AutoName" = "name",
            "StudentName" = "student_name",
